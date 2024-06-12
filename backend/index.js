@@ -30,6 +30,7 @@ async function getUserByEmail(email) {
 
 app.get('/api/user/:email', async (req, res) => {
   const { email } = req.params;
+  console.log('Received email:', email);
   try {
     const user = await getUserByEmail(email);
     if (user) {

@@ -14,12 +14,14 @@ const LoginPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('https://illegal-maritime-activities-system-server.vercel.app/user/api/' + email, {
+      const url = `https://illegal-maritime-activities-system-server.vercel.app/api/user/${email}`;
+      const response = await fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       });
+      console.log(response);
       if (response.ok) {
         const data = await response.json();
         if (data && data.password === password) {
