@@ -5,7 +5,8 @@ const cors = require('cors');
 
 const app = express();
 
-const DATABASE_URL = "postgresql://petra:Cd0DF6w8zIqedvVuLb91iQ@agile-db-9455.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full";
+const DATABASE_URL = process.env.DATABASE_URL;
+
 const client = new Client(DATABASE_URL);
 
 client.connect()
@@ -14,7 +15,6 @@ client.connect()
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../../build')));
 
 const selectUserQuery = `SELECT * FROM users WHERE email = $1;`;
 
@@ -42,9 +42,4 @@ app.get('/api/user/:email', async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../build', 'index.html'));
-});
-
-app.listen(5000, console.log("Server running on port 5000"));
+module.exports = app;

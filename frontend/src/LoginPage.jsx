@@ -14,7 +14,7 @@ const LoginPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/user/' + email, {
+      const response = await fetch('https://illegal-maritime-activities-system-server.vercel.app/user/api/' + email, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
