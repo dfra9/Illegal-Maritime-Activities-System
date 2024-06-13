@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const { Client } = require('pg');
 const cors = require('cors');
 
@@ -14,7 +13,6 @@ client.connect()
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../../build')));
 
 const selectUserQuery = `SELECT * FROM users WHERE email = $1;`;
 
@@ -43,8 +41,4 @@ app.get('/api/user/:email', async (req, res) => {
   }
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../build', 'index.html'));
-});
-
-app.listen(5000, console.log("Server running on port 5000"));
+app.listen(5000, () => console.log("Server running on port 5000"));
