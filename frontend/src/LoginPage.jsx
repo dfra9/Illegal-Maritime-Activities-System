@@ -3,30 +3,30 @@ import { useNavigate } from 'react-router-dom';
 import './LoginPageStyle.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useAuth } from './AuthContext';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const url = `http://localhost:5000/user/${email}`;
-      const response = await fetch(url,   {
+      // Backend URL and query parameters
+      const url = `https://illegal-maritime-activities-system-server.vercel.app/rest=get?user=${encodeURIComponent(email)}&pass=${encodeURIComponent(password)}`;
+
+      const response = await fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      console.log(response);
+
       if (response.ok) {
         const data = await response.json();
-        if (data && data.password === password) {
+        if (data.length > 0) {
+          // Assuming data is an array with user details (from SELECT * query)
           toast.success('Login successful!');
-          login();
           navigate('/view');
         } else {
           toast.error('Invalid email or password');
