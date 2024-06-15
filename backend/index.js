@@ -1,44 +1,81 @@
-const express = require('express');
-const { Client } = require('pg');
-const cors = require('cors');
+const { send, json } = require('micro');
+const { Pool } = require('pg');
 
-const app = express();
-
-const DATABASE_URL = "postgresql://petra:Cd0DF6w8zIqedvVuLb91iQ@agile-db-9455.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full";
-const client = new Client(DATABASE_URL);
-
-client.connect()
-  .then(() => console.log("Connected to the database"))
-  .catch(err => console.error("Database connection error:", err));
-
-app.use(express.json());
-app.use(cors());
-
-const selectUserQuery = `SELECT * FROM users WHERE email = $1;`;
-
-async function getUserByEmail(email) {
-  try {
-    const result = await client.query(selectUserQuery, [email]);
-    return result.rows[0];
-  } catch (err) {
-    console.error("Error selecting user:", err);
-    throw err;
-  }
-}
-
-app.get('/api/user/:email', async (req, res) => {
-  const { email } = req.params;
-  try {
-    const user = await getUserByEmail(email);
-    if (user) {
-      res.json(user);
-    } else {
-      res.status(404).json({ error: "User not found" });
-    }
-  } catch (err) {
-    console.error("Error:", err);
-    res.status(500).json({ error: "Internal server error" });
+// Replace with your actual PostgreSQL connection URL
+const pool = new Pool({
+  connectionString: 'postgresql://aoldb_owner:SivqGBTw1fY6@ep-empty-voice-a1h1zqlp-pooler.ap-southeast-1.aws.neon.tech/aoldb?sslmode=require',
+  ssl: {
+    rejectUnauthorized: false // only needed if your PostgreSQL server uses self-signed certificate
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// Handler function for GET requests
+async function handleGet(req, res) {
+  const { query } = req;
+  const { user, pass } = query;
+
+  try {
+    const client = await pool.connect();
+    const result = await client.query('SELECT * FROM users WHERE email = $1 AND password = $2', [user, pass]);
+    client.release();
+
+    if (result.rows.length === 0) {
+      send(res, 404, 'User not found');
+    } else {
+      send(res, 200, result.rows);
+    }
+  } catch (error) {
+    send(res, 500, error.message);
+  }
+}
+
+// Handler function for POST requests
+async function handlePost(req, res) {
+  try {
+    const data = await json(req);
+    const { email, password } = data;
+
+    const client = await pool.connect();
+    const result = await client.query('INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *', [email, password]);
+    client.release();
+
+    send(res, 201, result.rows[0]);
+  } catch (error) {
+    send(res, 500, error.message);
+  }
+}
+
+// Handler function for DELETE requests
+async function handleDelete(req, res) {
+  const { query } = req;
+  const { id } = query;
+
+  try {
+    const client = await pool.connect();
+    const result = await client.query('DELETE FROM users WHERE id = $1 RETURNING *', [id]);
+    client.release();
+
+    if (result.rows.length === 0) {
+      send(res, 404, 'User not found');
+    } else {
+      send(res, 200, 'User deleted successfully');
+    }
+  } catch (error) {
+    send(res, 500, error.message);
+  }
+}
+
+// Main request handler function
+module.exports = async (req, res) => {
+  const { url, method } = req;
+
+  if (method === 'GET' && url.startsWith('/rest=get')) {
+    return handleGet(req, res);
+  } else if (method === 'POST' && url === '/') {
+    return handlePost(req, res);
+  } else if (method === 'DELETE' && url.startsWith('/rest=delete')) {
+    return handleDelete(req, res);
+  } else {
+    send(res, 404, 'Not Found');
+  }
+};
