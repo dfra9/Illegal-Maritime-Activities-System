@@ -13,7 +13,7 @@ const LoginPage = () => {
     event.preventDefault();
     try {
       // Backend URL and query parameters
-      const url = `https://illegal-maritime-activities-system-server.vercel.app/rest=get?user=${encodeURIComponent(email)}&pass=${encodeURIComponent(password)}`;
+      const url = `https://your-backend-domain.vercel.app/rest=get?user=${encodeURIComponent(email)}&pass=${encodeURIComponent(password)}`;
 
       const response = await fetch(url, {
         method: 'GET',
