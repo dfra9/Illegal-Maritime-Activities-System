@@ -20,6 +20,7 @@ const LoginPage = () => {
           'Content-Type': 'application/json',
         },
       });
+
       if (response.ok) {
         const data = await response.json();
         if (data && data.password === password) {
