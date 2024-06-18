@@ -19,7 +19,7 @@
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/react.png?raw=true" alt="react.js" width=20>| React.js</p>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/leaflet.png?raw=true" alt="Leaflet.js" width=20>| Leaflet.js</p>
         <h3>APIs & Data Source</h3>
-        <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/gfw.png?raw=true" alt="GFW" width=20>| Global Fishing Watch</p>
+        <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/gfw.png?raw=true" alt="GFW" width=20>| Global Fishing Watch API</p>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/protectedplanet.png?raw=true" alt="ProtectedPlanet" width=20>| Protected Planet GeoJSON</p>
         <h3>Backend Framework & Server</h3>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/express.png?raw=true" alt="Express.js" width=20>| Express.js</p>
