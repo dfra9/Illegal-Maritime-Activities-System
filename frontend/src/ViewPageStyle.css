@@ -1,45 +1,38 @@
-/* In your CSS file (e.g., App.css or a dedicated CSS file for the component) */
-
+body{
+  overflow: hidden;
+}
 .input-form {
+  display: inline-flex;
     position: absolute;
+    height: 10%;
     top: 2vh;
-    left: 75vw;
+    left: 80vw ;
     z-index: 1000;
-    background: white;
-    padding: 10px;
+    background: rgba(255, 255, 255,0.2);
+    backdrop-filter: blur(2px);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
-    align-content: center;
+    align-content: center !important;
+    padding: 0 10px 0 10px;
+    border: 1px solid rgba(255,255,255,0.4);
   }
-  
-  .input-form input {
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 20vw;
-    justify-self: center;
-    align-self: center;
-    display: block;
-  }
-  .input-color{
-    display: inline !important;
-    width: 10.3vw !important;
-  }
-  .input-form button {
-    width: 10.3vw;
-    display: inline !important;
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .input-form button:hover {
-    background-color: #0056b3;
-  }
-  
+.input-form h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space:nowrap;
+  display: inline !important;
+  font-size: 2.5vw;
+}
+.input-form img{
+  display: inline !important;
+  width: 4vw;
+}
+.leaflet-bar a, .leaflet-bar a:hover {
+  text-decoration: none !important;
+  background: rgba(255, 255, 255,0.2);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,255,255,0.4);
+}

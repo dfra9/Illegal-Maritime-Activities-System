@@ -184,6 +184,7 @@ const MapGet = () => {
   return (
     <div>
       <div className="input-form" >
+      <img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/frontend/public/logo512.png?raw=true" alt="logo" />
         <h1>Ship Watch</h1>
       </div>
       <MapContainer center={[-2.5, 117]} zoom={5} style={{ height: '100vh', width: '100%' }}>

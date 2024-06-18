@@ -1,18 +1,40 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #4e4e4e;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #ccc;
 }
 
 .login-form {
-  background: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .form-group {
@@ -26,14 +48,19 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 94%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
 
-.submit-button {
-  width: 100%;
+.submit-button,
+.register-button {
+  width: 48%;
   padding: 0.75rem;
   background-color: green;
   color: white;
@@ -43,6 +70,7 @@ input {
   font-size: 1rem;
 }
 
-.submit-button:hover {
+.submit-button:hover,
+.register-button:hover {
   background-color: darkgreen;
 }
