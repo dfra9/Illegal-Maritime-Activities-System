@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+<!DOCTYPE html>
+<html lang="en">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illegal Maritime Activities Monitoring System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1f1f2e;
+            color: #c0c0c0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.1;
+        }
 
-## Available Scripts
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #2a2a3c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .techstack{
+            line-height: 1;
+            lin
+        }
 
-In the project directory, you can run:
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
 
-### `npm start`
+        p {
+            text-align: justify;
+        }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        .links {
+            margin-top: 20px;
+        }
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        .links a {
+            display: block;
+            margin-bottom: 10px;
+            color: #00bfff;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
-### `npm test`
+        .links a:hover {
+            text-decoration: underline;
+        }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #808080;
+        }
+    </style>
+</head>
 
-### `npm run build`
+<body>
+    <div class="container">
+        <h1>Illegal Maritime Activities Monitoring System</h1>
+        
+        <p>
+            Welcome to the Illegal Maritime Activities Monitoring System, a webapp designed 
+            to track and manage illegal maritime activities across Indonesian EEZs. This system leverages GLobal Fishing Watch API
+            to provide almost real-time data analytics and monitoring capabilities, ensuring maritime 
+            security and compliance with international regulations.
+        </p>
+        <div class="links">
+            <h2>Accesible Links:</h2>
+            <a href="https://illegal-maritime-activities-system-client.vercel.app" target="_blank">Client Application</a>
+            <a href="https://illegal-maritime-activities-system-admin.vercel.app/" target="_blank">Admin Dashboard</a>
+            <a href="https://glitch.com/edit/#!/illegal-maritime-activities-system-server" target="_blank">Web Server</a>
+        </div><br>
+        <p class="techstack">
+            <h2>Techstack Used:</h2>
+            <h3>Frontend Framework & Libraries</h3>
+            <p>React.js</p>
+            <p>Leaflet.js</p>
+            <h3>APIs & Data Source</h3>
+            <p>Global Fishing Watch</p>
+            <p>Protected Planet GeoJSON</p>
+            <h3>Backend Framework & Server</h3>
+            <p>Express.js</p>
+            <h3>Database</h3>
+            <p>PostgreSQL</p>
+            <h3>Deployment Platforms</h3>
+            <p>Vercel</p>
+            <p>Glitch</p>
+        </p>
+        <div class="footer">
+            <p>Author(s):</p>
+            <p>Petra Michael</p>
+        </div>
+    </div>
+</body>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</html>
