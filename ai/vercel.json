@@ -1,14 +1,15 @@
 {
+    "version": 1,
     "builds": [
         {
-            "src":"mapbackendapi.py",
+            "src":"app.py",
             "use":"@vercel/python"
         }
     ],
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"mapbackendapi.py"
+            "dest":"app.py"
         }
     ]
 }

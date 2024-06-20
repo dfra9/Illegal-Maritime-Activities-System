@@ -78,7 +78,7 @@ def process_data(start_date, end_date):
                 X_unlabeled_scaled = scaler.fit_transform(X_unlabeled.reshape(-1, X_unlabeled.shape[-1])).reshape(X_unlabeled.shape)
 
                 # Load AI model and predict
-                ai_input = 'ship_classification200.h5'
+                ai_input = 'static/images/ship_classification200.h5'
                 print(f"Loading AI model from: {ai_input}")
                 model = load_model(ai_input)
                 predicted_labels = model.predict(X_unlabeled_scaled)
