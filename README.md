@@ -31,6 +31,6 @@
     </p>
     <div class="footer">
         <p>Author(s):</p>
-        <p>Petra Michael</p>
+        <p>Petra Michael,  Defara Putra N., Nikolas Goldy Sulihin, Gregorius Cahyadi</p>
     </div>
 </div>
