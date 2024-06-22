@@ -30,13 +30,13 @@
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/protectedplanet.png?raw=true" alt="ProtectedPlanet" width=20>| Protected Planet GeoJSON</p>
         <h3>Backend Framework & Server</h3>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/express.png?raw=true" alt="Express.js" width=20>| Express.js</p>
-        <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/flask.png?raw=true" alt="Express.js" width=20>| Flask</p>
+        <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/flask.png?raw=true" alt="Flask" width=20>| Flask</p>
         <h3>Database</h3>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/postgresql.png?raw=true" alt="PostgreSQL" width=20>| PostgreSQL</p>
         <h3>Deployment Platforms</h3>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/vercel.png?raw=true" alt="Vercel" width=20>| Vercel</p>
         <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/glitch.png?raw=true" alt="Glitch" width=20>| Glitch</p>
-        <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/nginx.png?raw=true" alt="Express.js" width=20>| Nginx</p>
+        <p><img src="https://github.com/aimatochysia/Illegal-Maritime-Activities-System/blob/main/logos/nginx.png?raw=true" alt="Nginx" width=20>| Nginx</p>
     </p>
     <div class="footer">
         <p>Author(s):</p>
