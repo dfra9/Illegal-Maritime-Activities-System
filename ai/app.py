@@ -6,7 +6,6 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import load_model
 from flask import Flask, request, jsonify
-from plyer import notification
 
 app = Flask(__name__)
 
@@ -78,9 +77,9 @@ def process_data(start_date, end_date):
                 X_unlabeled_scaled = scaler.fit_transform(X_unlabeled.reshape(-1, X_unlabeled.shape[-1])).reshape(X_unlabeled.shape)
 
                 # Load AI model and predict
-                ai_input = 'static/images/ship_classification200.h5'
+                ai_input = 'static/models/ship_classification200.h5'
                 print(f"Loading AI model from: {ai_input}")
-                model = load_model(ai_input)
+                model = load_model(ai_input, compile=False)  # Disable compilation since legacy optimizer might be incompatible
                 predicted_labels = model.predict(X_unlabeled_scaled)
                 predicted_mmsi_indices = np.argmax(predicted_labels, axis=1)
                 # Initialize a dictionary to keep track of new MMSI assignments
@@ -141,4 +140,4 @@ def endpoint_process_data():
         return str(e), 500
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")
